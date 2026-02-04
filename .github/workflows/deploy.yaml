@@ -29,7 +29,7 @@ jobs:
         working-directory: ./VPC
       - name: Terraform Plan
         id: plan
-        run: terraform plan
+        run: terraform plan -destroy
         working-directory: ./VPC
       - name: Terraform Apply
         id: apply
