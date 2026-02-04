@@ -26,21 +26,21 @@ jobs:
 
       - name: Terraform Format Check
         run: terraform fmt -check
-        working-directory: ./VPC
+        working-directory: ./terraform-infra
 
       - name: Terraform Init
         run: terraform init
-        working-directory: ./VPC
+        working-directory: ./terraform-infra
 
       - name: Terraform Validate
         run: terraform validate
-        working-directory: ./VPC
+        working-directory: ./terraform-infra
 
       - name: Terraform Plan
         run: terraform plan -input=false
-        working-directory: ./VPC
+        working-directory: ./terraform-infra
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main'
         run: terraform apply -auto-approve
-        working-directory: ./VPC
+        working-directory: ./terraform-infra
